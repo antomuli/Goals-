@@ -1,5 +1,13 @@
+<div class="row">
+  <div class="col-md-2">
 
+  </div>
+  <div class="col-md-8">
+    <div class="card">
+      <h5 class="card-title">{{goal.description}}</h5>
+      <p class="card-text">This goal will be complete in {{goal.completeDate|dateCount}} days</p>
+      <!-- <button (click)='goalDelete(true)' class="btn btn-outline-danger">Delete Goal</button> -->
 
-<p>{{goal.description}}</p>
-<p>This goal will be complete in {{goal.completeDate|dateCount}} days</p>
-<button (click)= 'goalDelete(true)' class="btn btn-outline-danger">Delete Goal</button>
+    </div>
+  </div>
+</div>

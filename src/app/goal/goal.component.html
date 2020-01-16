@@ -1,4 +1,5 @@
 <div class="container">
+  <ng-progress></ng-progress>
   <h1>MY GOALS</h1>
   <hr>
 
@@ -7,11 +8,8 @@
       <div *ngFor='let goal of goals;let i = index'>
         <div>
           <h6 id={{i}} appStrikethrough>{{goal.name}} due on {{goal.completeDate|date|uppercase}}</h6>
-          <button (click)='toggleDetails(i)' class="btn btn-primary">Toggle Details</button>
-        </div>
-
-        <div *ngIf='goal.showDescription'>
-          <app-goal-detail  [goal]='goal' (isComplete) = 'deleteGoal($event,i)'></app-goal-detail>
+          <button class="btn btn-primary" (click)='goToUrl(goal.id)'>View Details</button>
+          <button class="btn btn-outline-danger" (click)='deleteGoal(i)'>Delete Goal</button>
         </div>
       </div>
     </div>
@@ -20,4 +18,10 @@
     </div>
   </div>
   <p *ngIf='goals.length > 5'>You have too many goals</p>
+  <div class="row">
+    <blockquote class="blockquote text-center">
+      <p class="mb-0">{{quote.quote}}</p>
+      <footer class="blockquote-footer"><cite>{{quote.author}}</cite></footer>
+    </blockquote>
+  </div>
 </div>
